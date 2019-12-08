@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using ConverterAPI.Enums;
+using ConverterAPI.Models;
+using System.Net;
 
 namespace Converter.API.Tests{
 
@@ -67,34 +69,60 @@ namespace Converter.API.Tests{
 
             //Assert
             A.CallTo(() => countryService.GetCountriesAsync()).MustHaveHappenedOnceExactly();
-            Assert.IsType<ActionResult<List<Country>>>(result);
-            Assert.NotNull(result);
-
+            Assert.IsType<ActionResult<List<Country>>>(result);                 
+            
         }
 
         [Fact]
-        public void When_Convert_InValid_Params_Then_Response400BadRequest()
+        public void When_Convert_InValid_Params_Then_ThrowsNullException()
         {
             //Arrange
-
-
-            //Act
-
-
+            ConvertInputModel input = new ConvertInputModel();
+            input.ConvertFrom= CurrencyType.GBP;
+            input.ConvertTo = CurrencyType.USD;
+            
+            var sut = new ConverterController(logger, currencyService, countryService);
+           
             //Assert
+            Assert.ThrowsAsync<ArgumentNullException>(() => sut.Convert(input));            
         }
 
+        [Theory]       
+        [InlineData(-2)]
+        [InlineData(0)]
+        public void When_Convert_InValid_valueToConvert_Then_Response400BadRequestWithMessage(decimal testValue)
+        {
+            //Arrange
+            ConvertInputModel input = new ConvertInputModel();
+            input.ConvertFrom= CurrencyType.GBP;
+            input.ConvertTo = CurrencyType.USD;
+            input.ValueToConvert = testValue;
+            var sut = new ConverterController(logger, currencyService, countryService);
+            //Act
+            var actualResult = sut.Convert(input).GetAwaiter().GetResult() as BadRequestObjectResult;
+            //Assert
+            Assert.Equal("Invalid data", actualResult.Value);
+            
+        }
         [Fact]
         public void When_Convert_Valid_Params_Then_Response200OK()
         {
             //Arrange
-           
-
+            ConvertInputModel input = new ConvertInputModel();
+            input.ConvertFrom= CurrencyType.GBP;
+            input.ConvertTo = CurrencyType.USD;
+            input.ValueToConvert = 2;
+            decimal testconvertRate = 1.60m * (input.ValueToConvert);            
+            var sut = new ConverterController(logger, currencyService, countryService);
             //Act
-
-
+            var testResult = sut.Convert(input).GetAwaiter().GetResult() as OkObjectResult;
             //Assert
+            Assert.NotNull(testResult);
+            Assert.Equal("200",testResult.StatusCode.ToString());
+            Assert.Equal(testconvertRate, testResult.Value);
+            
         }
+        
 
     }
 }

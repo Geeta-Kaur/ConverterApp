@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Trapt .MSI\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Trapt .MSI\\.nuget\\packages"
+    ]
+  }
+}

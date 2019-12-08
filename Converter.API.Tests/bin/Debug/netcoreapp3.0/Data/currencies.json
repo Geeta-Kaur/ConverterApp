@@ -1,0 +1,19 @@
+[
+    {
+        "shortname": "GBP",
+        "name":"pound"  
+
+    },
+    {
+        "shortname": "USD",
+        "name":"USDollar"  
+    },
+    {
+        "shortname": "AUD",
+        "name":"AuDollar"  
+    },
+    {
+        "shortname": "EUR",
+        "name":"Euro"  
+    }
+]

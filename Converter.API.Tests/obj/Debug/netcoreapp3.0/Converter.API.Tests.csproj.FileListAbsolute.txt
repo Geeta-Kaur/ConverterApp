@@ -355,3 +355,5 @@ C:\Users\Trapt .MSI\Documents\GitHub\ConverterApp\Converter.API.Tests\obj\Debug\
 C:\Users\Trapt .MSI\Documents\GitHub\ConverterApp\Converter.API.Tests\obj\Debug\netcoreapp3.0\Converter.API.Tests.csproj.CopyComplete
 C:\Users\Trapt .MSI\Documents\GitHub\ConverterApp\Converter.API.Tests\obj\Debug\netcoreapp3.0\Converter.API.Tests.dll
 C:\Users\Trapt .MSI\Documents\GitHub\ConverterApp\Converter.API.Tests\obj\Debug\netcoreapp3.0\Converter.API.Tests.pdb
+C:\Users\Trapt .MSI\Documents\GitHub\ConverterApp\Converter.API.Tests\bin\Debug\netcoreapp3.0\client\package-lock.json
+C:\Users\Trapt .MSI\Documents\GitHub\ConverterApp\Converter.API.Tests\bin\Debug\netcoreapp3.0\Serilog.dll

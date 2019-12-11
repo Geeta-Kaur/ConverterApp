@@ -1,0 +1,7 @@
+{"LogMessage":"Rates checked from GBP to USD","LogDate":"2019-12-10T21:52:58.2858813+00:00"}
+{"LogMessage":"Rates checked from GBP to USD","LogDate":"2019-12-10T21:58:08.7340439+00:00"}
+{"LogMessage":"Rates checked from GBP to USD","LogDate":"2019-12-10T21:59:04.6784159+00:00"}
+{"LogMessage":"Rates checked from GBP to USD","LogDate":"2019-12-11T00:15:13.087022+00:00"}
+{"LogMessage":"Rates checked from GBP to USD","LogDate":"2019-12-11T00:17:34.0463732+00:00"}
+{"LogMessage":"Rates checked from GBP to USD","LogDate":"2019-12-11T00:19:11.7347223+00:00"}
+{"LogMessage":"Rates checked from GBP to USD","LogDate":"2019-12-11T00:48:48.7958507+00:00"}
